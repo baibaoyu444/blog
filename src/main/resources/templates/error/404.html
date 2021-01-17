@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--  实现传参  如果是link，里面写::link -->
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <!--  设置移动端页面的适配  -->
+    <!--  宽度是设备的宽度 初始化缩放师1.0倍  -->
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>404</title>
+    <!--  使用cdn方式集成semantic-ui  -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <!--  格式不正确的时候，使用thymeleaf导入  -->
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+</head>
+<body>
+
+<!--  上方的导航栏  -->
+<nav th:replace="_fragments :: menu(0)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <!--  导航栏设置可堆叠的  -->
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini home icon"></i>首页</a>
+            <a href="#" class="active m-item item m-mobile-hide"><i class="mini idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini info icon"></i>关于我</a>
+
+            <!--  添加右侧的搜索框  -->
+            <div class="right m-item item m-mobile-hide">
+                <!--  inverted转换为黑色  transparent变成透明的  -->
+                <!-- ui里面加inverted transparent两个属性变成黑色的  -->
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  制作导航栏的小按钮  -->
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<br />
+<br />
+<br />
+
+<div class="m-container-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-huge">
+        <h2>404</h2>
+        <p>对不起，你访问的资源不存在</p>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+</body>
+</html>
